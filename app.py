@@ -4,7 +4,9 @@ import sklearn
 import pickle
 import pandas as pd
 app=Flask(__name__)
+
 model = pickle.load(open("loan-final-new_model.pkl", "rb"))
+
 @app.route('/')
 def welcome():
     return render_template("acc.html")
@@ -63,7 +65,7 @@ def predict():
               p_loans,
               Property     
          ]])      
-                      
+         print(pred)        
          if(str(pred[0])=='Y'):
             return render_template('succes.html',prediction_text="Congo you are eligible for loan")
          else:
