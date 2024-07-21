@@ -64,8 +64,7 @@ def predict():
               Lone_term,
               p_loans,
               Property     
-         ]])      
-         print(pred)        
+         ]])             
          if(str(pred[0])=='Y'):
             return render_template('succes.html',prediction_text="Congo you are eligible for loan")
          else:
